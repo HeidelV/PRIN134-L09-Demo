@@ -14,7 +14,7 @@
   <div id="recipe-container" class="container">
     <h1 id="recipe-title">Chocolate Cake Recipe</h1>
     <img id="cake" src="img/chocolate-cake.jpg" alt="Chocolate Cake" width="100%">
-    <h2 class="headers">Ingredients</h2>
+    <h2 class="headers" onclick="headerAnimate()">Ingredients</h2>
     <ul id="recipe-ingredients">
       <li>1 cup all-purpose flour</li>
       <li>1 cup sugar</li>
@@ -37,6 +37,9 @@
       <li>Pour batter into the cake pan and bake for 30-35 minutes.</li>
       <li>Let cool before serving. Enjoy!</li>
     </ol>
+    <button onclick="highlightIngredient()">Highlight Ingredient</button>
+    <button onclick="checkInstructions()">Check Instructions</button>
+    <button onclick="">Reset</button>
   </div>
 </body>
 
