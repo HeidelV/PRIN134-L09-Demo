@@ -9,34 +9,49 @@ function highlightIngredient() {
     });
 }
 
-// function checkInstructions(){
-//     const instructions = document.querySelectorAll("#recipe-instructions li");
-//     console.log(instructions);
-//     instructions.forEach(element => {
-//         instructions.addEventListener("click", () => (
-//             instructions.classList = toggle("is-none")
-//         ))
-//     })
-// }
-
 function checkInstructions() {
     const instructions = document.querySelectorAll("#recipe-instructions li");
-    
-    instructions.forEach((instruction) => {
-        instructions.addEventListener("click", () => {
-            setTimeout(() => {
-                instructions.style.textDecoration = "is-done";
-            }, 3000);
-        });
+
+    instructions.forEach((instruction, index) => {
+        setTimeout(() => {
+            instruction.classList.add("is-done");
+        }, index * 3000); 
     });
 }
 
-function headerAnimate(){
-    document.getElementById("headers").classList = 'rotate-center';
-    button.classList.add("animationjs");
-
-    setTimeout(() => {
-        button.style.backgroundColor = "#A155B9";
-        button.classList.remove("animationjs");
-    }, 1500);
+function reset() {
+    const instructions = document.querySelectorAll("#recipe-instructions li");
+  
+    instructions.forEach(instruction => instruction.classList.remove("is-done"));
 }
+
+function ingredientsAnimate() {
+    const header = document.querySelector("#ingredients-header"); 
+    header.classList.add("animate__animated", "animate__bounce"); 
+
+
+    header.addEventListener("animationend", () => {
+        header.classList.remove("animate__bounce");
+    }, { once: true }); 
+}
+
+function instructionsAnimate() {
+    const header2 = document.querySelector("#instructions-header"); 
+    header2.classList.add("animate__animated", "animate__bounce"); 
+
+
+    header2.addEventListener("animationend", () => {
+        header2.classList.remove("animate__bounce");
+    }, { once: true }); 
+}
+
+function imageAnimate() {
+    const image = document.getElementById("cake");
+    image.classList.add("animate__animated", "animate__pulse"); 
+
+    image.addEventListener("animationend", () => {
+        image.classList.remove("animate__pulse");
+    }, { once: true });
+}
+
+
